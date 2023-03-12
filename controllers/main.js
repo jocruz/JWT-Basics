@@ -5,12 +5,13 @@
 
 const jwt = require("jsonwebtoken");
 const CustomAPIError = require("../errors/custom-error");
+const {BadRequestError} = require('../errors')
 
 const login = async (req, res) => {
   const { username, password } = req.body;
   console.log(username, password);
   if (!username || !password) {
-    throw new CustomAPIError("Please provide email and password", 400);
+    throw new BadRequestError("Please provide email and password");
   }
   // This id would be the id from our document from the mongodb database, where we would have a username created and its respected ID
   // however due to not being created to the database, we will just use the date().getDate() to mimic that long number string.
