@@ -5,7 +5,7 @@
 
 const jwt = require("jsonwebtoken");
 const CustomAPIError = require("../errors/custom-error");
-const {BadRequestError} = require('../errors')
+const { BadRequestError } = require("../errors");
 
 const login = async (req, res) => {
   const { username, password } = req.body;
@@ -20,7 +20,7 @@ const login = async (req, res) => {
   const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
     expiresIn: "30d",
   });
-  res.status(200).json({ msg: "Usercreated", token });
+  res.status(200).json({ msg: "Usercreated", token }); // this sends back the jwt token to the front end
 };
 
 // const dashboard = async (req, res) => {
