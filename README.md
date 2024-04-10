@@ -1,5 +1,3 @@
-Sure, let's include the details of the specific files and their functionalities within the README to give a comprehensive overview of your JWT implementation:
-
 # 🛡️ JWT Basics
 
 ## Overview
